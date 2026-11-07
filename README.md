@@ -4,8 +4,8 @@
 
 <p align="center"><img src="logo.png" alt="google-imagen-3 logo: a single square picture frame glowing faintly in safelight red darkness, inside it a picture half developed, one side a pale rough sketch and the other side rich silver detail" width="200"></p>
 
-[![Google Imagen 3](/images/a_person_setting_on_the_beach_watching_meteors_pix_generated_image.png)](https://github.com/llegomark/google-imagen-3)
-[![Google Imagen 3](/images/mayon_volcano_pixel_art_generated_image.png_20250213_034953_310585.png)](https://github.com/llegomark/google-imagen-3)
+[![Google Imagen 3](images/a_person_setting_on_the_beach_watching_meteors_pix_generated_image.png)](https://github.com/llegomark/google-imagen-3)
+[![Google Imagen 3](images/mayon_volcano_pixel_art_generated_image.png_20250213_034953_310585.png)](https://github.com/llegomark/google-imagen-3)
 
 This repository provides a Python script, `imagen_with_refinement.py`, for generating high-quality images using Google's cutting-edge **Imagen 3** model.  Leveraging the latest **Google Gen AI Python SDK (`google-genai`)** and **Gemini**, this tool enhances your image prompts before sending them to Imagen 3, resulting in more detailed and visually compelling creations.
 
