@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>google-imagen-3: the darkroom contact sheet</title>
+<meta name="description" content="AI image generation with Google Imagen 3 and Gemini prompt refinement, presented as a darkroom contact sheet.">
+<style>
+@font-face{font-family:'Bebas Neue';src:url('fonts/BebasNeue-Regular.ttf') format('truetype')}
+@font-face{font-family:'Archivo';src:url('fonts/Archivo-Regular.ttf') format('truetype');font-weight:400}
+@font-face{font-family:'Archivo';src:url('fonts/Archivo-Bold.ttf') format('truetype');font-weight:700}
+*{box-sizing:border-box}
+body{margin:0;background:#0b0505;color:#d9d2c7;font-family:'Archivo',sans-serif;line-height:1.65}
+header{padding:2rem 5vw 0}
+header img.banner{width:100%;border:3px solid #571f16;box-shadow:0 0 44px rgba(190,50,30,.28)}
+.logo{width:92px;height:92px;border:3px solid #571f16;background:#160808}
+h1{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:2.6rem;letter-spacing:.05em;color:#f0e8da;line-height:1.15}
+h2{font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:1.7rem;letter-spacing:.05em;color:#e8b64c;line-height:1.25}
+.caption{color:#c4543a;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;font-weight:700}
+main{padding:0 5vw 3rem;max-width:1060px;margin:0 auto}
+.panel{background:#140808;border:2px solid #571f16;padding:1.2rem 1.4rem;margin:1.5rem 0;box-shadow:inset 0 0 34px rgba(190,50,30,.10)}
+pre.code{background:#050303;color:#e8ddcb;padding:1rem 1.2rem;overflow-x:auto;font-size:.88rem;border-left:6px solid #c33}
+.shots{display:grid;grid-template-columns:1fr;gap:1rem;margin:1.5rem 0}
+.shots img{width:100%;border:3px solid #571f16;background:#160808}
+.shots figcaption{color:#a99f8f;font-size:.9rem;padding:.35rem 0}
+a{color:#e8b64c}
+footer{padding:1.4rem 5vw;color:#8d8172;border-top:2px solid #571f16}
+</style></head><body>
+<header>
+<img class="banner" src="assets/banner.png" alt="A developing tray under red safelight, a picture surfacing in the liquid, a meteor beach scene resolving from pale ghost shapes into silver detail, tongs resting on the tray edge, an amber timer glow in the black background">
+<p><img class="logo" src="assets/logo.png" alt="google-imagen-3 logo: a single square picture frame glowing faintly in safelight red darkness, inside it a picture half developed, one side a pale rough sketch and the other side rich silver detail"></p>
+<h1>google-imagen-3</h1>
+<p class="caption">Imagen 3, developed under the safelight</p>
+<p>AI image generation with Google's Imagen 3 model, with Gemini refining your prompt first so the print comes out sharper.</p>
+<nav><p><a href="https://github.com/Epsilon0xCell/google-imagen-3">github.com/Epsilon0xCell/google-imagen-3</a></p></nav>
+</header>
+<main>
+<figure class="shots"><img src="assets/intro.png" alt="A contact sheet pinned to dry, a row of small frames of the same scene each more refined than the last, the final frame richest in detail, red safelight wash over silver greys"><figcaption>The contact sheet: the same scene, frame by frame, each pass more refined than the last.</figcaption></figure>
+<section class="panel"><h2>How the print is made</h2>
+<p><code>imagen_with_refinement.py</code> takes your text prompt and uses Gemini to refine it against the official Imagen Prompt Guide. The enhanced prompt then goes to Imagen 3 (<code>imagen-3.0-generate-002</code>), and the finished image is saved locally as a PNG with a unique, timestamped filename. For the direct route with no refinement step, <code>imagen_no_refinement.py</code> sends your prompt as written.</p></section>
+<section class="panel"><h2>Features</h2>
+<ul>
+<li>Imagen 3 powered, built on the Google Gen AI Python SDK (<code>google-genai</code>)</li>
+<li>Gemini prompt refinement for better detail and prompt adherence</li>
+<li>Customizable aspect ratio (1:1, 3:4, 4:3, 9:16, 16:9), widescreen 16:9 by default</li>
+<li>Adjustable image count, 1 to 4 images per prompt</li>
+<li>Safety filtering at BLOCK_LOW_AND_ABOVE</li>
+<li>Local storage with unique filenames, and a plain command-line interface</li>
+</ul></section>
+<section class="panel"><h2>Getting started</h2>
+<p>Python 3.12 or newer is recommended. Install the dependencies, then put your Google Generative AI API key in a <code>.env</code> file as <code>GOOGLE_API_KEY</code>:</p>
+<pre class="code">pip install -r requirements.txt
+python imagen_with_refinement.py</pre>
+<p>The script asks for your prompt, aspect ratio, and image count, then saves the generated image in the same directory.</p></section>
+</main>
+<footer><p>Theme: darkroom contact-sheet photography. Art generated for this repo's Wave 5 theme pass. License: see the repo LICENSE file.</p></footer>
+</body></html>
